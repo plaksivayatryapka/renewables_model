@@ -12,7 +12,7 @@ def sprint(text, input_value, *args):
         output = str(format(input_value, '.1f')) + str(args[0])
     return output
 
-
+# основная функция расчёта 
 def calculate(i, wind, solar, load, wind_multiplier, solar_multiplier, capacity_storage, wind_price, solar_price, gas_price, price_kwh_storage, discount_rate_storage, years_storage):
     rng = len(wind)
     
@@ -68,6 +68,7 @@ def calculate(i, wind, solar, load, wind_multiplier, solar_multiplier, capacity_
         return values
 
 
+# функция перебора сценариев
 def calculate_cycle(wind, solar, load, wind_multiplier, solar_multiplier, capacity_storage, wind_price, solar_price, gas_price, price_kwh_storage,
                     discount_rate_storage, years_storage):
 
@@ -135,7 +136,7 @@ def calculate_cycle(wind, solar, load, wind_multiplier, solar_multiplier, capaci
 
     return lcoe, overhead_ratio, gas_ratio
 
-
+# функция текста с данными на график
 def values_func(i, wind, solar, load, charged, discharged, gas, overhead, overhead_count, capacity_storage, wind_price, solar_price, gas_price, price_kwh_storage, discount_rate_storage, years_storage, wind_multiplier, solar_multiplier):
     
     wind_capacity = 102.5 * wind_multiplier  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
